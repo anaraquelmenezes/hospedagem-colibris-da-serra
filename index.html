@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hospedagem Colibris da Serra | Um espaço inteiro só para você e sua família</title>
+<meta name="description" content="Hospedagem Colibris da Serra: casa inteira para sua família na serra, a 5 minutos a pé da Vila Gastronômica. Vista para o pôr do sol, conforto e privacidade.">
+<link rel="icon" type="image/png" href="images/favicon.png">
+
+<meta property="og:title" content="Hospedagem Colibris da Serra">
+<meta property="og:description" content="Um espaço inteiro só para você e sua família — a 5 minutos a pé da Vila Gastronômica da Serra.">
+<meta property="og:image" content="images/faixada.jpg">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --gold: #A8823D;
+    --gold-deep: #8C6B2E;
+    --ink: #2B2620;
+    --ink-soft: #514A3D;
+    --cream: #FAF6EE;
+    --cream-deep: #F1E8D6;
+    --card: #FFFFFF;
+    --line: #E3D7BC;
+    --shadow: 0 12px 32px rgba(43,38,32,0.10);
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Jost', sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+
+  h1,h2,h3{font-family:'Playfair Display', serif; font-weight:600; color:var(--ink);}
+  .eyebrow{
+    font-family:'Jost', sans-serif;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    font-size:.75rem;
+    color:var(--gold-deep);
+    font-weight:500;
+  }
+  .section{
+    max-width:1120px;
+    margin:0 auto;
+    padding:96px 24px;
+  }
+  .section-head{
+    text-align:center;
+    max-width:640px;
+    margin:0 auto 56px;
+  }
+  .section-head h2{font-size:clamp(1.9rem,4vw,2.6rem); margin-top:10px;}
+  .section-head p{font-family:'Cormorant Garamond', serif; font-size:1.25rem; color:var(--ink-soft); margin-top:14px;}
+  .divider{
+    width:70px; height:2px; background:var(--gold);
+    margin:18px auto 0; position:relative;
+  }
+  .divider::before{
+    content:'✦'; color:var(--gold); position:absolute; left:50%; top:50%;
+    transform:translate(-50%,-50%); background:var(--cream); padding:0 10px; font-size:.7rem;
+  }
+
+  /* Header */
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 32px;
+    background:rgba(250,246,238,0);
+    transition:background .35s ease, box-shadow .35s ease, padding .35s ease;
+  }
+  header.scrolled{
+    background:rgba(250,246,238,.96);
+    box-shadow:0 4px 20px rgba(43,38,32,.08);
+    padding:12px 32px;
+    backdrop-filter:blur(6px);
+  }
+  header .brand{display:flex; align-items:center; gap:10px; font-family:'Playfair Display',serif; font-weight:600; font-size:1.05rem; color:#fff; transition:color .35s ease;}
+  header.scrolled .brand{color:var(--ink);}
+  header .brand img{height:38px; width:auto;}
+  nav{display:flex; gap:30px;}
+  nav a{
+    font-size:.85rem; letter-spacing:.05em; color:#fff; opacity:.92;
+    transition:color .3s ease, opacity .3s ease; position:relative;
+  }
+  header.scrolled nav a{color:var(--ink-soft);}
+  nav a:hover{opacity:1; color:var(--gold);}
+  .nav-toggle{display:none;}
+
+  .btn{
+    display:inline-block;
+    padding:14px 30px;
+    border-radius:2px;
+    font-size:.85rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    font-weight:500;
+    transition:all .3s ease;
+    border:1px solid var(--gold);
+  }
+  .btn-primary{background:var(--gold); color:#fff;}
+  .btn-primary:hover{background:var(--gold-deep); border-color:var(--gold-deep);}
+  .btn-ghost{background:transparent; color:#fff; border-color:rgba(255,255,255,.7);}
+  .btn-ghost:hover{background:rgba(255,255,255,.12);}
+
+  /* Hero */
+  .hero{
+    position:relative;
+    height:100vh;
+    min-height:640px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#fff;
+    background:linear-gradient(180deg, rgba(20,16,10,.42) 0%, rgba(20,16,10,.30) 45%, rgba(20,16,10,.62) 100%), url('images/hero-vista.jpg') center/cover no-repeat;
+  }
+  .hero-content{max-width:720px; padding:0 24px;}
+  .hero-content img.hero-logo{width:min(320px,70vw); margin:0 auto 22px; filter:drop-shadow(0 4px 18px rgba(0,0,0,.35));}
+  .hero-content .tag{
+    font-family:'Cormorant Garamond', serif; font-style:italic; font-size:1.35rem;
+    margin-top:6px; color:#F3E9D2; letter-spacing:.02em;
+  }
+  .hero-cta{margin-top:34px; display:flex; gap:16px; justify-content:center; flex-wrap:wrap;}
+  .scroll-cue{
+    position:absolute; bottom:28px; left:50%; transform:translateX(-50%);
+    color:#fff; font-size:.7rem; letter-spacing:.2em; text-transform:uppercase;
+    display:flex; flex-direction:column; align-items:center; gap:8px; opacity:.85;
+  }
+  .scroll-cue::after{
+    content:''; width:1px; height:34px; background:rgba(255,255,255,.6);
+    animation:scrollmove 1.8s ease-in-out infinite;
+  }
+  @keyframes scrollmove{0%{transform:scaleY(0); transform-origin:top;} 50%{transform:scaleY(1); transform-origin:top;} 51%{transform-origin:bottom;} 100%{transform:scaleY(0); transform-origin:bottom;}}
+
+  /* About */
+  .about{
+    display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;
+  }
+  .about img{border-radius:4px; box-shadow:var(--shadow);}
+  .about h2{font-size:clamp(1.9rem,3.4vw,2.5rem); margin-bottom:18px;}
+  .about p{font-family:'Cormorant Garamond', serif; font-size:1.18rem; color:var(--ink-soft); margin-bottom:16px;}
+  .about-facts{display:flex; gap:28px; margin-top:28px; flex-wrap:wrap;}
+  .fact{border-left:2px solid var(--gold); padding-left:14px;}
+  .fact strong{display:block; font-family:'Playfair Display',serif; font-size:1.15rem;}
+  .fact span{font-size:.85rem; color:var(--ink-soft);}
+
+  /* Accommodations cards */
+  .grid-cards{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:28px;
+  }
+  .card{
+    background:var(--card);
+    border-radius:6px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    transition:transform .35s ease, box-shadow .35s ease;
+  }
+  .card:hover{transform:translateY(-6px); box-shadow:0 20px 40px rgba(43,38,32,.16);}
+  .card .img-wrap{aspect-ratio:4/3; overflow:hidden;}
+  .card .img-wrap img{width:100%; height:100%; object-fit:cover; transition:transform .5s ease;}
+  .card:hover .img-wrap img{transform:scale(1.06);}
+  .card .card-body{padding:22px 22px 26px;}
+  .card .card-body .eyebrow{display:block; margin-bottom:6px;}
+  .card .card-body h3{font-size:1.25rem; margin-bottom:8px;}
+  .card .card-body p{font-family:'Cormorant Garamond', serif; font-size:1.05rem; color:var(--ink-soft);}
+
+  /* Gallery / views */
+  .gallery{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:14px;
+  }
+  .gallery a{border-radius:4px; overflow:hidden; box-shadow:var(--shadow); display:block; aspect-ratio:3/4;}
+  .gallery img{width:100%; height:100%; object-fit:cover; transition:transform .5s ease;}
+  .gallery a:hover img{transform:scale(1.08);}
+
+  /* Access / vila gastronomica */
+  .access{
+    background:var(--ink);
+    color:#F4EEDF;
+  }
+  .access .section{padding:88px 24px;}
+  .access .section-head p{color:#D9CDAE;}
+  .access .section-head h2{color:#fff;}
+  .access-list{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:18px 40px;
+    max-width:760px; margin:0 auto 8px;
+  }
+  .access-list li{
+    list-style:none; display:flex; gap:12px; align-items:center;
+    font-family:'Cormorant Garamond', serif; font-size:1.2rem; color:#F4EEDF;
+    padding:10px 0; border-bottom:1px solid rgba(244,238,223,.14);
+  }
+  .access-list li::before{content:'✦'; color:var(--gold); font-size:.85rem;}
+  .access-note{
+    text-align:center; margin-top:36px; font-family:'Cormorant Garamond', serif;
+    font-style:italic; font-size:1.15rem; color:#D9CDAE;
+  }
+
+  /* Pricing */
+  .pricing-wrap{
+    display:grid; grid-template-columns:1.1fr 0.9fr; gap:48px; align-items:stretch;
+  }
+  .price-card{
+    background:var(--card); border-radius:8px; box-shadow:var(--shadow);
+    padding:44px 40px;
+  }
+  .price-row{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:18px 0; border-bottom:1px solid var(--line);
+  }
+  .price-row:last-of-type{border-bottom:none;}
+  .price-row .label{display:flex; align-items:center; gap:14px; font-size:1.05rem;}
+  .price-row .icon{
+    width:38px; height:38px; border-radius:50%; background:var(--cream-deep);
+    display:flex; align-items:center; justify-content:center; color:var(--gold-deep); font-size:1.1rem;
+  }
+  .price-row .value{font-family:'Playfair Display', serif; font-size:1.35rem; color:var(--gold-deep); font-weight:700;}
+  .price-note{
+    margin-top:24px; padding-top:20px; border-top:1px dashed var(--line);
+    font-family:'Cormorant Garamond', serif; font-size:1.05rem; color:var(--ink-soft);
+  }
+  .hours-card{
+    background:var(--ink); color:#F4EEDF; border-radius:8px; padding:40px 36px;
+    display:flex; flex-direction:column; justify-content:center; gap:22px;
+  }
+  .hours-card h3{color:#fff; font-size:1.3rem; margin-bottom:4px;}
+  .hours-row{display:flex; justify-content:space-between; font-size:1.05rem; padding:10px 0; border-bottom:1px solid rgba(244,238,223,.14);}
+  .hours-row span:first-child{color:#D9CDAE;}
+  .hours-row strong{font-family:'Playfair Display',serif;}
+
+  /* Location */
+  .location-wrap{display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;}
+  .map-embed{border-radius:8px; overflow:hidden; box-shadow:var(--shadow); aspect-ratio:4/3.4; border:none;}
+  .map-embed iframe{width:100%; height:100%; border:0;}
+  .location-info p{font-family:'Cormorant Garamond', serif; font-size:1.18rem; color:var(--ink-soft); margin-bottom:20px;}
+  .loc-btns{display:flex; gap:16px; flex-wrap:wrap; margin-top:8px;}
+  .btn-dark{background:var(--ink); color:#fff; border-color:var(--ink);}
+  .btn-dark:hover{background:#000;}
+  .btn-outline{background:transparent; color:var(--ink); border-color:var(--ink);}
+  .btn-outline:hover{background:var(--ink); color:#fff;}
+
+  /* Contact / CTA */
+  .cta{
+    position:relative;
+    background:linear-gradient(180deg, rgba(20,16,10,.62), rgba(20,16,10,.68)), url('images/vista-4.jpg') center/cover;
+    color:#fff; text-align:center;
+  }
+  .cta .section{padding:110px 24px;}
+  .cta h2{color:#fff; font-size:clamp(2rem,4vw,2.7rem);}
+  .cta p{font-family:'Cormorant Garamond', serif; font-size:1.3rem; color:#F1E8D6; max-width:560px; margin:18px auto 34px;}
+  .whatsapp-btn{
+    display:inline-flex; align-items:center; gap:12px;
+    background:#25D366; color:#fff; padding:18px 38px; border-radius:50px;
+    font-weight:600; letter-spacing:.03em; font-size:1rem; box-shadow:0 14px 30px rgba(0,0,0,.25);
+    transition:transform .3s ease, box-shadow .3s ease;
+  }
+  .whatsapp-btn:hover{transform:translateY(-3px); box-shadow:0 18px 36px rgba(0,0,0,.3);}
+  .whatsapp-btn svg{width:24px; height:24px; fill:#fff;}
+
+  /* Footer */
+  footer{background:var(--ink); color:#D9CDAE; padding:48px 24px 28px; text-align:center;}
+  footer img{height:44px; margin:0 auto 16px; opacity:.95;}
+  footer .foot-links{display:flex; gap:26px; justify-content:center; margin:18px 0; flex-wrap:wrap;}
+  footer .foot-links a{font-size:.85rem; color:#D9CDAE; transition:color .3s;}
+  footer .foot-links a:hover{color:var(--gold);}
+  footer .copy{font-size:.78rem; color:#9C9179; margin-top:18px;}
+
+  /* Floating WhatsApp */
+  .float-wa{
+    position:fixed; right:22px; bottom:22px; z-index:120;
+    width:58px; height:58px; border-radius:50%; background:#25D366;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 10px 26px rgba(0,0,0,.28);
+    transition:transform .3s ease;
+  }
+  .float-wa:hover{transform:scale(1.08);}
+  .float-wa svg{width:30px; height:30px; fill:#fff;}
+
+  @media (max-width:900px){
+    .about{grid-template-columns:1fr; gap:36px;}
+    .about .img-col{order:-1;}
+    .grid-cards{grid-template-columns:repeat(2,1fr);}
+    .gallery{grid-template-columns:repeat(2,1fr);}
+    .pricing-wrap{grid-template-columns:1fr;}
+    .location-wrap{grid-template-columns:1fr;}
+    .access-list{grid-template-columns:1fr 1fr;}
+    nav{display:none;}
+    .nav-toggle{display:block; background:none; border:none; color:#fff; font-size:1.6rem; cursor:pointer;}
+    header.scrolled .nav-toggle{color:var(--ink);}
+  }
+  @media (max-width:560px){
+    .grid-cards{grid-template-columns:1fr;}
+    .gallery{grid-template-columns:repeat(2,1fr);}
+    .access-list{grid-template-columns:1fr;}
+    .section{padding:72px 20px;}
+  }
+
+  #menu-mobile{
+    display:none; position:fixed; inset:0; z-index:110; background:var(--ink);
+    flex-direction:column; align-items:center; justify-content:center; gap:28px;
+  }
+  #menu-mobile.open{display:flex;}
+  #menu-mobile a{color:#F4EEDF; font-family:'Playfair Display',serif; font-size:1.4rem;}
+  #menu-mobile .close-menu{position:absolute; top:24px; right:28px; font-size:2rem; color:#F4EEDF; cursor:pointer; background:none; border:none;}
+</style>
+</head>
+<body>
+
+<header id="site-header">
+  <a href="#top" class="brand"><img src="images/logo.png" alt="Hospedagem Colibris da Serra"></a>
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#acomodacoes">Acomodações</a>
+    <a href="#vistas">Vistas</a>
+    <a href="#arredores">Arredores</a>
+    <a href="#valores">Valores</a>
+    <a href="#localizacao">Localização</a>
+  </nav>
+  <a class="btn btn-primary" href="https://wa.me/5511983399531" target="_blank" rel="noopener" style="display:flex;align-items:center;">Reservar</a>
+  <button class="nav-toggle" id="openMenu" aria-label="Abrir menu">☰</button>
+</header>
+
+<div id="menu-mobile">
+  <button class="close-menu" id="closeMenu" aria-label="Fechar menu">×</button>
+  <a href="#sobre">Sobre</a>
+  <a href="#acomodacoes">Acomodações</a>
+  <a href="#vistas">Vistas</a>
+  <a href="#arredores">Arredores</a>
+  <a href="#valores">Valores</a>
+  <a href="#localizacao">Localização</a>
+  <a href="https://wa.me/5511983399531" target="_blank" rel="noopener">Reservar no WhatsApp</a>
+</div>
+
+<section class="hero" id="top">
+  <div class="hero-content">
+    <img src="images/logo.png" alt="Hospedagem Colibris da Serra" class="hero-logo">
+    <p class="tag">Um espaço inteiro só para você e sua família</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="https://wa.me/5511983399531" target="_blank" rel="noopener">Fazer reserva</a>
+      <a class="btn btn-ghost" href="#acomodacoes">Conhecer a casa</a>
+    </div>
+  </div>
+  <div class="scroll-cue">explore</div>
+</section>
+
+<section class="section" id="sobre">
+  <div class="about">
+    <div>
+      <p class="eyebrow">Sobre a hospedagem</p>
+      <h2>Sua casa na serra, com a vista que Mairiporã reserva para poucos</h2>
+      <p>A Colibris da Serra é uma casa inteira, privativa, pensada para famílias e grupos de amigos que querem descansar sem dividir espaço com estranhos. Aqui, você tem as chaves, o silêncio e o pôr do sol só para si.</p>
+      <p>Localizada em condomínio tranquilo, a casa reúne quartos aconchegantes, sala de estar reversível, cozinha equipada e uma varanda com vista para as montanhas — a poucos passos da badalada Vila Gastronômica da Serra.</p>
+      <div class="about-facts">
+        <div class="fact"><strong>Casa inteira</strong><span>Privativa, só para o seu grupo</span></div>
+        <div class="fact"><strong>2 quartos</strong><span>Casal + duplo, sala reversível</span></div>
+        <div class="fact"><strong>5 min a pé</strong><span>Da Vila Gastronômica da Serra</span></div>
+      </div>
+    </div>
+    <div class="img-col">
+      <img src="images/faixada.jpg" alt="Fachada da Hospedagem Colibris da Serra ao entardecer" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="section" id="acomodacoes" style="background:var(--cream-deep);">
+  <div class="section-head">
+    <p class="eyebrow">Acomodações</p>
+    <h2>Cada espaço, pensado para o seu conforto</h2>
+    <div class="divider"></div>
+  </div>
+  <div class="grid-cards">
+    <div class="card">
+      <div class="img-wrap"><img src="images/quarto-casal.jpg" alt="Quarto de casal com varanda e vista para o jardim" loading="lazy"></div>
+      <div class="card-body">
+        <span class="eyebrow">Quarto</span>
+        <h3>Suíte casal</h3>
+        <p>Cama de casal, varanda privativa e vista para o verde — o quarto ideal para acordar com calma.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="img-wrap"><img src="images/quarto-duplo.jpg" alt="Quarto duplo com cama de solteiro e cama auxiliar" loading="lazy"></div>
+      <div class="card-body">
+        <span class="eyebrow">Quarto</span>
+        <h3>Quarto duplo</h3>
+        <p>Cama de solteiro com cama auxiliar e escrivaninha — perfeito para crianças ou um segundo casal.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="img-wrap"><img src="images/sala-estar.jpg" alt="Sala de estar reversível com sofás confortáveis" loading="lazy"></div>
+      <div class="card-body">
+        <span class="eyebrow">Convivência</span>
+        <h3>Sala reversível</h3>
+        <p>Sofás retráteis que viram cama extra, ampliando o espaço para receber mais hóspedes.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="img-wrap"><img src="images/cozinha.jpg" alt="Cozinha equipada com vista para o jardim" loading="lazy"></div>
+      <div class="card-body">
+        <span class="eyebrow">Cozinha</span>
+        <h3>Cozinha completa</h3>
+        <p>Totalmente equipada para preparar suas refeições com calma, com vista para o jardim externo.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="img-wrap"><img src="images/toilette.jpg" alt="Banheiro amplo e confortável" loading="lazy"></div>
+      <div class="card-body">
+        <span class="eyebrow">Banheiro</span>
+        <h3>Banheiro amplo</h3>
+        <p>Espaço completo, com acabamento cuidadoso para o seu conforto durante toda a estadia.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="img-wrap"><img src="images/sala-estar-2.jpg" alt="Ambiente integrado da sala de estar" loading="lazy"></div>
+      <div class="card-body">
+        <span class="eyebrow">Convivência</span>
+        <h3>Ambiente integrado</h3>
+        <p>Espaço amplo e iluminado, pensado para os momentos em família reunida.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="vistas">
+  <div class="section-head">
+    <p class="eyebrow">Vistas</p>
+    <h2>O pôr do sol que dá nome à casa</h2>
+    <p>Da varanda, as montanhas de Mairiporã se transformam a cada entardecer.</p>
+    <div class="divider"></div>
+  </div>
+  <div class="gallery">
+    <a href="images/hero-vista.jpg" target="_blank" rel="noopener"><img src="images/hero-vista.jpg" alt="Vista do pôr do sol sobre a serra" loading="lazy"></a>
+    <a href="images/vista-2.jpg" target="_blank" rel="noopener"><img src="images/vista-2.jpg" alt="Vista panorâmica das montanhas" loading="lazy"></a>
+    <a href="images/vista-3.jpg" target="_blank" rel="noopener"><img src="images/vista-3.jpg" alt="Vista da serra ao entardecer" loading="lazy"></a>
+    <a href="images/vista-4.jpg" target="_blank" rel="noopener"><img src="images/vista-4.jpg" alt="Vista da natureza ao redor da hospedagem" loading="lazy"></a>
+  </div>
+</section>
+
+<section class="access" id="arredores">
+  <div class="section">
+    <div class="section-head">
+      <p class="eyebrow" style="color:var(--gold);">Arredores</p>
+      <h2>Você vai a pé (5 minutos) à Vila Gastronômica da Serra</h2>
+      <div class="divider"></div>
+    </div>
+    <ul class="access-list">
+      <li>Vila Cantareira</li>
+      <li>Duana Restaurante e Pizzaria</li>
+      <li>Deck Steak House</li>
+      <li>Jacks Café</li>
+      <li>Chocolateria da Serra</li>
+      <li>Hamburgueria artesanal Santo Rango</li>
+    </ul>
+    <p class="access-note">...e muito mais, a poucos passos da porta de casa.</p>
+  </div>
+</section>
+
+<section class="section" id="valores" style="background:var(--cream-deep);">
+  <div class="section-head">
+    <p class="eyebrow">Valores</p>
+    <h2>Tabela de preços</h2>
+    <div class="divider"></div>
+  </div>
+  <div class="pricing-wrap">
+    <div class="price-card">
+      <div class="price-row">
+        <div class="label"><span class="icon">👤</span> 1 pessoa</div>
+        <div class="value">R$ 249,00</div>
+      </div>
+      <div class="price-row">
+        <div class="label"><span class="icon">👥</span> 2 pessoas</div>
+        <div class="value">R$ 299,00</div>
+      </div>
+      <div class="price-row">
+        <div class="label"><span class="icon">➕</span> Pessoa adicional</div>
+        <div class="value">R$ 140,00</div>
+      </div>
+      <p class="price-note">Crianças até 10 anos não pagam. De 11 a 17 anos, meia diária. Valores por diária, referentes à casa completa.</p>
+    </div>
+    <div class="hours-card">
+      <div>
+        <h3>Horários</h3>
+        <div class="hours-row"><span>Check-in</span><strong>15h</strong></div>
+        <div class="hours-row"><span>Check-out</span><strong>12h</strong></div>
+      </div>
+      <a class="btn btn-primary" style="text-align:center;" href="https://wa.me/5511983399531" target="_blank" rel="noopener">Consultar disponibilidade</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="localizacao">
+  <div class="section-head">
+    <p class="eyebrow">Localização</p>
+    <h2>Onde fica a Colibris da Serra</h2>
+    <div class="divider"></div>
+  </div>
+  <div class="location-wrap">
+    <div class="map-embed">
+      <iframe src="https://maps.google.com/maps?q=Mairipor%C3%A3%2C%20S%C3%A3o%20Paulo&z=14&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa de localização da Hospedagem Colibris da Serra"></iframe>
+    </div>
+    <div class="location-info">
+      <p>A hospedagem fica em Mairiporã, São Paulo, a poucos minutos a pé da Vila Gastronômica da Serra e cercada por natureza, tranquilidade e a serra que dá nome à casa.</p>
+      <p>O endereço completo e as instruções de acesso são enviados após a confirmação da reserva.</p>
+      <div class="loc-btns">
+        <a class="btn btn-outline" href="https://maps.app.goo.gl/YvSw9KLb63ez2MUT7" target="_blank" rel="noopener">Ver no Google Maps</a>
+        <a class="btn btn-dark" href="https://wa.me/5511983399531" target="_blank" rel="noopener">Pedir endereço no WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contato">
+  <div class="section">
+    <p class="eyebrow" style="color:var(--gold);">Reserve agora</p>
+    <h2>Pronto para o seu pôr do sol na serra?</h2>
+    <p>Fale agora pelo WhatsApp e garanta as datas da sua estadia na Colibris da Serra.</p>
+    <a class="whatsapp-btn" href="https://wa.me/5511983399531" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.5-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.4 0-.5C10.1 9 9.6 7.8 9.4 7.3c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3 4.8 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.2-.3-.2-.6-.3z"/><path d="M12 2C6.5 2 2 6.4 2 12c0 1.9.5 3.6 1.4 5.2L2 22l4.9-1.3c1.5.8 3.2 1.3 5.1 1.3 5.5 0 10-4.4 10-10S17.5 2 12 2zm0 18.1c-1.7 0-3.4-.5-4.8-1.3l-.3-.2-3 .8.8-2.9-.2-.3C3.6 14.7 3 13.4 3 12c0-5 4-9 9-9s9 4 9 9-4 9-9 9z"/></svg>
+      +55 11 98339-9531
+    </a>
+  </div>
+</section>
+
+<footer>
+  <img src="images/logo.png" alt="Hospedagem Colibris da Serra">
+  <div class="foot-links">
+    <a href="#sobre">Sobre</a>
+    <a href="#acomodacoes">Acomodações</a>
+    <a href="#valores">Valores</a>
+    <a href="#localizacao">Localização</a>
+    <a href="https://wa.me/5511983399531" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+  <p class="copy">© 2026 Hospedagem Colibris da Serra — Mairiporã, SP. Um espaço inteiro só para você e sua família.</p>
+</footer>
+
+<a class="float-wa" href="https://wa.me/5511983399531" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.5-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.4 0-.5C10.1 9 9.6 7.8 9.4 7.3c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3 4.8 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.2-.3-.2-.6-.3z"/><path d="M12 2C6.5 2 2 6.4 2 12c0 1.9.5 3.6 1.4 5.2L2 22l4.9-1.3c1.5.8 3.2 1.3 5.1 1.3 5.5 0 10-4.4 10-10S17.5 2 12 2zm0 18.1c-1.7 0-3.4-.5-4.8-1.3l-.3-.2-3 .8.8-2.9-.2-.3C3.6 14.7 3 13.4 3 12c0-5 4-9 9-9s9 4 9 9-4 9-9 9z"/></svg>
+</a>
+
+<script>
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  });
+
+  const menu = document.getElementById('menu-mobile');
+  document.getElementById('openMenu').addEventListener('click', () => menu.classList.add('open'));
+  document.getElementById('closeMenu').addEventListener('click', () => menu.classList.remove('open'));
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+</script>
+
+</body>
+</html>
